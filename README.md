@@ -1,5 +1,11 @@
 # Ledgerly Expense Tracker
 
+## Project Name
+
+**Ledgerly Expense Tracker**
+
+## Project Description
+
 Ledgerly is a simple personal expense tracker built with React, TypeScript, and Vite. It provides a quick dashboard for reviewing expenses, checking a monthly budget, and adding new transactions.
 
 ## Features
@@ -20,6 +26,16 @@ Install these tools before starting:
 
 - Node.js 18 or newer
 - npm
+
+## How to Install
+
+Download the project, open a terminal in the project folder, and install its dependencies:
+
+```bash
+npm install
+```
+
+This reads `package.json` and installs React, Vite, TypeScript, Lucide icons, and the development tools needed by the project.
 
 ## Run Locally
 
@@ -43,6 +59,20 @@ Install these tools before starting:
    ```
 
 4. Open the local URL shown by Vite, usually `http://localhost:5173`.
+
+## GitHub Repository
+
+The source code is available at:
+
+https://github.com/priyastud/breakout1expensetracker
+
+## Live Application URL
+
+The application currently runs locally during development at:
+
+http://127.0.0.1:5173/
+
+There is no public production deployment yet. To view the application, follow the [Run Locally](#run-locally) instructions above.
 
 ## Available Commands
 
@@ -105,7 +135,7 @@ git commit -m "Describe your change"
 git push
 ```
 
-## Technology Stack
+## Technology Used
 
 - React 19
 - TypeScript
