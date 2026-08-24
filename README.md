@@ -1,32 +1,114 @@
-# React + TypeScript + Vite
+# Ledgerly Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Ledgerly is a simple personal expense tracker built with React, TypeScript, and Vite. It provides a quick dashboard for reviewing expenses, checking a monthly budget, and adding new transactions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Dashboard with total spent, monthly expenditure, and total budget
+- Indian rupee formatting using the `en-IN` locale
+- Current-month date range and expense calculations
+- Category spending breakdown with a visual chart
+- Recent transactions list
+- Transaction search
+- Add expense form with merchant, amount, date, and category fields
+- Browser local storage persistence, so data remains after a page refresh
+- Responsive layout for desktop and mobile screens
 
-## React Compiler
+## Requirements
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Install these tools before starting:
 
-## Expanding the Oxlint configuration
+- Node.js 18 or newer
+- npm
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Run Locally
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+1. Clone the repository and open its folder:
+
+   ```bash
+   git clone https://github.com/priyastud/breakout1expensetracker.git
+   cd breakout1expensetracker
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open the local URL shown by Vite, usually `http://localhost:5173`.
+
+## Available Commands
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the development server with hot reload |
+| `npm run build` | Type-check and create a production build |
+| `npm run lint` | Run Oxlint |
+| `npm run preview` | Preview the production build locally |
+
+## How The Dashboard Works
+
+The dashboard automatically uses the current calendar month. It filters transactions by the current year and month before calculating the total spent and category breakdown.
+
+- **Total spent:** Sum of current-month transactions
+- **Monthly expenditure:** Same live current-month transaction total
+- **Total budget:** Current monthly budget limit of ₹1,00,000
+- **Budget progress:** Monthly expenditure compared with the total budget
+
+When there are no current-month transactions in an existing browser profile, Ledgerly adds a small set of sample transactions dated within the current month. Older transactions remain available in the Transactions view.
+
+## Saving Data
+
+Expenses are stored in the browser under the `ledgerly-transactions` local storage key. This means:
+
+- No account or backend server is required
+- Data is saved automatically after an expense is added
+- Data is tied to the browser and device being used
+- Clearing browser site data removes the saved expenses
+
+This local storage approach is suitable for the MVP. A future version could use a database and user authentication for syncing across devices.
+
+## Project Structure
+
+```text
+src/
+├── App.tsx       # Main dashboard and expense workflow
+├── index.css     # Application styles and responsive layout
+├── main.tsx      # React application entry point
+└── assets/       # Images and static assets
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Production Build
+
+Create a production build with:
+
+```bash
+npm run build
+```
+
+The generated files are placed in the `dist/` folder. They can be deployed to any static hosting service such as Vercel, Netlify, or GitHub Pages with SPA fallback support.
+
+## Git Workflow
+
+To save and publish future changes:
+
+```bash
+git add .
+git commit -m "Describe your change"
+git push
+```
+
+## Technology Stack
+
+- React 19
+- TypeScript
+- Vite
+- Lucide React icons
+- Oxlint
