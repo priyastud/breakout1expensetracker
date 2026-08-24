@@ -68,11 +68,11 @@ https://github.com/priyastud/breakout1expensetracker
 
 ## Live Application URL
 
-The application currently runs locally during development at:
+Open the deployed application here:
 
-http://127.0.0.1:5173/
+https://breakout1expensetracker-zccx.vercel.app/
 
-There is no public production deployment yet. To view the application, follow the [Run Locally](#run-locally) instructions above.
+For local development, use the URL shown by Vite after running `npm run dev`, usually `http://localhost:5173`.
 
 ## Available Commands
 
